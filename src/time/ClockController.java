@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package time;
 
 import java.net.URL;
@@ -34,7 +29,26 @@ public class ClockController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.hoursTextField.setText("15");
+        this.minutesTextField.setText("0");
+        this.secondsTextField.setText("0");
     }    
+    
+    public void updateTimeLabels()
+    {
+        try
+        {
+            Time time = new Time(Integer.parseInt(hoursTextField.getText()),
+                                 Integer.parseInt(minutesTextField.getText()),
+                                 Integer.parseInt(secondsTextField.getText()));
+            
+            this.miltaryTimeLabel.setText(time.toMilitaryTime());
+            this.standardTimeLabel.setText(time.toStandardTime());
+        }
+        catch (IllegalArgumentException e)
+        {
+            
+        }
+    }
     
 }
