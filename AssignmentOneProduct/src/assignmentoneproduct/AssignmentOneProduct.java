@@ -69,10 +69,7 @@ public class AssignmentOneProduct extends Application {
     ObservableList<Atv> atvs = FXCollections.observableArrayList();
     Double newTotal = 0.0;
     
- 
 
-
-    
    //main method
     public static void main(String[] args) {
         launch(args);
